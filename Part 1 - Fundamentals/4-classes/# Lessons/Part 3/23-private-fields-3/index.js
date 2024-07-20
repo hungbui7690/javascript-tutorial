@@ -34,7 +34,6 @@ class Cylinder extends Circle {
     this.#height = height
 
     // cannot access the #radius of the Circle class here
+    // If you attempt to access the #radius private field in the Cylinder class, you’ll get a SyntaxError.
   }
 }
-
-// If you attempt to access the #radius private field in the Cylinder class, you’ll get a SyntaxError.

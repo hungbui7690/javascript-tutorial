@@ -1,9 +1,5 @@
 /*
-  Getters and Setters
-  - Sometimes, you don’t want the name property to be accessed directly like this:
-      person.name
-
-  - To do that, you may come up with a pair of methods that manipulate the name property
+  <get> & <set> keyword
 
 */
 

@@ -12,19 +12,19 @@
 
 ///////////////////////////////
 // The following example defines the Person type and uses the instanceof operator to check if an object is an instance of that type
-// First, define a Person type using the constructor function pattern:
+// (1) First, define a Person type using the constructor function pattern:
 function Person(name) {
   this.name = name
 }
 
-// Second, create a new object of the Person type:
+// (2) Second, create a new object of the Person type:
 let p1 = new Person('John')
 
-// Third, check if the person is an instance of the Person type > check pic
+// (3) Third, check if the person is an instance of the Person type > check pic
 // The following also returns true because the Object.prototype appears on the prototype chain of the p1 object:
 console.log(p1 instanceof Person) // true
 
-///////////////////////////////
+// ********************
 // The following example defines the Person class and uses the instanceof operator to check if an object is an instance of the class:
 class Student {
   constructor(name) {
@@ -33,4 +33,4 @@ class Student {
 }
 
 let s1 = new Student('John')
-console.log(p1 instanceof Student) // true
+console.log(p1 instanceof Student) // false

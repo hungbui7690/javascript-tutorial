@@ -1,7 +1,6 @@
 /*
   Inheriting static members
 
-
 */
 
 // Besides the properties and methods, the child class also inherits all static properties and methods of the parent class. For example:
@@ -12,10 +11,9 @@ class Animal {
   walk() {
     console.log('walking on ' + this.legs + ' legs')
   }
-
-  // ***
-  static helloWorld() {
-    console.log('Hello World')
+  // # static method
+  static greeting() {
+    console.log('Ec Ec')
   }
 }
 
@@ -25,6 +23,6 @@ class Bird extends Animal {
   }
 }
 
-// In this example, the Animal class has the helloWorld() static method and this method is available as Bird.helloWorld() and behaves the same as the Animal.helloWorld() method:
-Animal.helloWorld()
-Bird.helloWorld()
+// In this example, the Animal class has the greeting() static method and this method is available as Bird.greeting() and behaves the same as the Animal.greeting() method:
+Animal.greeting()
+Bird.greeting()

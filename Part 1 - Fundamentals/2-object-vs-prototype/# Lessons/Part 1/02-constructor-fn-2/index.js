@@ -26,10 +26,9 @@ console.log(person.getFullName())
 
 /*
   Returning from constructor functions
-
-  Typically, a constructor function implicitly returns "this" that set to the newly created object. But if it has a return statement, then here are the rules:
-
-  - If return is called with an object, the constructor function returns that object instead of this.
-  - If return is called with a value other than an object, it is ignored.
+  - Typically, a constructor function implicitly returns "this" that set to the newly created object. But if it has a return statement, then here are the rules:
+    + If return is called with an object, the constructor function returns that object instead of this.
+    + If return is called with a value other than an object, it is ignored.
 
 */
+console.log(person.firstName.getFullName())

@@ -9,10 +9,9 @@
 
 */
 
-// 1) Private instance method example
 // The following illustrates how to define the Person class with private instance methods:
 class Person {
-  // First, define two private fields #firstName and #lastName in the Person class body.
+  // 1. First, define two private fields #firstName and #lastName in the Person class body.
   #firstName
   #lastName
 
@@ -21,12 +20,12 @@ class Person {
     this.#lastName = lastName
   }
 
-  // Third, define the public instance method getFullName() that returns a person’s full name. The getFullName() method calls the private method #firstLast() and #lastFirst() to return the full name.
+  // 3. Third, define the public instance method getFullName() that returns a person’s full name. The getFullName() method calls the private method #firstLast() and #lastFirst() to return the full name.
   getFullName(format = true) {
     return format ? this.#firstLast() : this.#lastFirst()
   }
 
-  // Second, define the private methods #firstLast() and #lastFirst(). These methods return the full name in different formats.
+  // 2. Second, define the private methods #firstLast() and #lastFirst(). These methods return the full name in different formats.
   #firstLast() {
     return `${this.#firstName} ${this.#lastName}`
   }

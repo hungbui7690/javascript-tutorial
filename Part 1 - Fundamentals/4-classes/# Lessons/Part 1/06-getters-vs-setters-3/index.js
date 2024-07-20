@@ -1,13 +1,12 @@
 /*
-  Getters and Setters
-
+  Using getter in an object literal
 
 */
 
-// Using getter in an object literal
 // The following example defines a getter called latest to return the latest attendee of the meeting object:
 let meeting = {
   attendees: [],
+
   add(attendee) {
     console.log(`${attendee} joined the meeting.`)
     this.attendees.push(attendee)

@@ -1,21 +1,17 @@
 /*
   Constructor Function
 
-
-
 */
 
-////////////////////////////////
 // For example, the following creates a new person object with two properties firstName and lastName:
 let person = {
   firstName: 'John',
   lastName: 'Doe',
 }
-
 /*
   In practice, you often need to create many similar objects like the person object.
 
-  To do that, you can use a constructor function to define a custom type and the new operator to create multiple objects from this type.
+  To do that, you can use a constructor (factory) function to define a custom type and the new operator to create multiple objects from this type.
 
   Technically speaking, a constructor function is a regular function with the following convention:
 
@@ -40,14 +36,14 @@ let personX = new Person('John', 'Doe')
   - Assign the arguments 'John' and 'Doe' to the firstName and lastName properties of the object.
   - Return the this value.
 
-    function Person(firstName, lastName) {
-      // this = {};
+  - Under the hood, it will look like this
+      function Person(firstName, lastName) {
+        this = {}
+        
+        this.firstName = firstName // add properties to this
+        this.lastName = lastName
 
-      // add properties to this
-      this.firstName = firstName;
-      this.lastName = lastName;
-
-      // return this;
+        return this;
   }
 
   Therefore, the following statement:

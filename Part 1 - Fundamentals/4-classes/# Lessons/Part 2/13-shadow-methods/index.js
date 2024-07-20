@@ -16,7 +16,7 @@ class Animal {
 // The following Dog class extends the Animal class and redefines the walk() method:
 class Dog extends Animal {
   constructor() {
-    super(4)
+    super(4) // # constructor() of Dog class does not have "legs" param
   }
   walk() {
     super.walk()

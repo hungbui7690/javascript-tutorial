@@ -1,9 +1,10 @@
 /*
   Getters and Setters
-  - Sometimes, you don’t want the name property to be accessed directly like this:
-      person.name
-
+  - Sometimes, you don’t want the name property to be accessed directly: person.name
   - To do that, you may come up with a pair of methods that manipulate the name property
+
+  ++++++++++++
+  - In this lesson, we create getName & setName as getter & setter methods
 
 */
 
@@ -30,8 +31,7 @@ console.log(person) // Jane Doe
 
 person.setName('Jane Smith')
 console.log(person.getName()) // Jane Smith
-
-console.log(person.name)
+console.log(person.name) // we still can access name property directly
 
 /*
   In this example, the Person class has the name property. Also, it has two additional methods getName() and setName().

@@ -22,5 +22,4 @@ Person.createAnonymous = function (gender) {
 
 // The createAnonymous() method is considered a static method because it doesn’t depend on any instance of the Person type for its property values.
 // To call the createAnonymous() method, you use the Person type instead of its instances:
-var anonymous = Person.createAnonymous()
-console.log(anonymous)
+console.log(Person.createAnonymous()) // Person {name: 'Jane Doe'}

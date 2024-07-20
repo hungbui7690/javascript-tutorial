@@ -1,103 +1,32 @@
 /*
-  Optional Chaining Operator
-  - The optional chaining operator (?.) is like a shortcut for accessing nested properties in a series of objects. Instead of having to check if each step in the chain is empty (null or undefined), you can use the operator ?. to directly access the desired property.
+  Prototype
+  - In JavaScript, objects can inherit features from one another via prototypes. Every object has its own property called a prototype.
 
-  - If any part of the chain is empty, the optional chaining operator (?.) will stop right there and give you undefined as a result. It saves you from writing extra checks for each step in the chain.
+  - Because the prototype itself is also another object, the prototype has its own prototype. This creates a something called prototype chain. The prototype chain ends when a prototype has null for its own prototype.
+
+  *** Note that when a function is a value of an object’s property, it’s called a method. Therefore, a method is a property with value as a function.
+
 
 */
 
-function getUser(id) {
-  if (id <= 0) {
-    return null
-  }
+// When examining the person object in the console, you’ll find that the person object has a property called prototype denoted by the [[Prototype]]:
+// The prototype itself is an object with its own properties:
+let person = { name: 'John' }
 
-  // get the user from database
-  // and return null if id does not exist
-  // ...
+// When you access a property of an object, if the object has that property, it’ll return the property value. The following example accesses the name property of the person object:
+person.name
 
-  // if user was found, return the user
-  return {
-    id: id,
-    username: 'admin',
-    profile: {
-      avatar: '/avatar.png',
-      language: 'English',
-    },
-  }
-}
+// It returns the value of the name property as expected.
+// However, if you access a property that doesn’t exist in an object, the JavaScript engine will search in the prototype of the object.
+// If the JavaScript engine cannot find the property in the object’s prototype, it’ll search in the prototype’s prototype until it finds the property or reaches the end of the prototype chain.
+// For example, you can call the toString() method of the person object like this:
+person.toString() // The toString() method returns the string representation of the person object. By default, it’s [object Object] which is not obvious.
 
-// The following uses the getUser() function to access the user profile:
-let user1 = getUser(1)
-let profile1 = user1.profile
+/*
+  In this example, when we call the toString() method on the person object, the JavaScript engine finds it in the person object.
 
-// 1) However, if you pass the id that is less than or equal to zero or the id doesn’t exist in the database, the getUser() function will return null.
-// Therefore, before accessing the avatar property, you need to check if the user is not null using the logical operator AND:
-let user2 = getUser(2)
-let profile2 = user2 && user2.profile
-// In this example, we confirm that the user is not null or undefined before accessing the value of user.profile property. It prevents the error that would occur if you simply access the user.profile directly without checking the user first.
+  Because the person object doesn’t have the toString() method, it’ll search for the toString() method in the person’s prototype object.
 
-// 2) ES2020 introduced the optional chaining operator denoted by the question mark followed by a dot:
-// The optional chaining operator implicitly checks if the user is not null or undefined before attempting to access the user.profile:
-let user3 = getUser(2)
-let profile3 = user3?.profile
+  Since the person’s prototype has the toString() method, JavaScript calls the toString() of the person’s prototype object.
 
-// In this example, if the user is null or undefined, the optional chaining operator (?.) immediately returns undefined.
-// Technically, it is equivalent to the following:
-let user4 = getUser(2)
-let profile4 =
-  user4 !== null || user4 !== undefined ? user4.profile4 : undefined
-
-// 3) Stacking the optional chaining operator
-// In case the user object returned by the getUser() does not have the profile property. Trying to access the avatar without checking the user.profile first will result in an error.
-// To avoid the error, you can use the optional chaining operator multiple times like this:
-let user5 = getUser(-1)
-let avatar = user5?.profile?.avatar
-
-// 4) Combining with the nullish coalescing operator
-// If you want to assign a default profile to the user, you can combine the optional chaining operator (?.) with the nullish coalescing operator (??) as follows:
-
-let defaultProfile = { default: '/default.png', language: 'English' }
-let user6 = getUser(2)
-let profile6 = user6?.profile6 ?? defaultProfile
-// In this example, if the user.profile is null or undefined, the profile will take the defaultProfile due to the nullish coalescing operator
-
-// 5) Using optional chaining operator with function calls
-// Suppose that you have a file API as follows:
-let file = {
-  read() {
-    return 'file content'
-  },
-  write(content) {
-    console.log(`Writing ${content} to file...`)
-    return true
-  },
-}
-
-let data = file.read()
-console.log(data) // error
-
-// However, if you use the optional chaining operator with the method call, the expression will return undefined instead of throwing an error:
-let compressedData = file.compress?.()
-// The compressedData is now undefined.
-// This is useful when you use an API in which a method might be not available for some reason e.g., a specific browser or device.
-
-// 6) The optional chaining operator (?.) is also helpful if you have a function with an optional callback:
-function getUser(id, callback) {
-  // get user
-  // ...
-
-  let user = {
-    id: id,
-    username: 'admin',
-  }
-
-  // METHOD 1: test if the callback exists
-  if (callback) {
-    callback(user)
-  }
-
-  // METHOD 2: optional chaining
-  callback?.(user)
-
-  return user
-}
+*/

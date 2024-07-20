@@ -2,7 +2,6 @@
   Inheriting from built-in types
   - JavaScript allows you to extend a built-in type such as Array, String, Map, and Set through inheritance.
 
-
 */
 
 // The following Queue class extends the Array reference type. The syntax is much cleaner than the Queue implemented using the constructor/prototype pattern.
@@ -22,6 +21,8 @@ class Queue extends Array {
 }
 
 const customers = new Queue()
+console.log('customers', customers)
+
 customers.enqueue('A')
 customers.enqueue('B')
 customers.enqueue('C')

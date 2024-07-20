@@ -19,8 +19,9 @@ class Android extends Person {
 }
 
 let p1 = new Person('John')
-console.log(Person[Symbol.hasInstance](p1)) // true > Since the Symbol.hasInstance is defined on the Function prototype, it’s automatically available by default in all functions and classes
+console.log(Person[Symbol.hasInstance](p1)) // true => Since the Symbol.hasInstance is defined on the Function prototype, it’s automatically available by default in all functions and classes
 
 let a1 = new Android('Sonny')
 console.log(a1 instanceof Android) // false
-console.log(a1 instanceof Person) // false
+console.log(a1 instanceof Person) // true
+console.log(p1 instanceof Person) // true

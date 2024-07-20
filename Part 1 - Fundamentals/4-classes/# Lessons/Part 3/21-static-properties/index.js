@@ -10,10 +10,10 @@ class Item {
     this.constructor.count++
   }
 
-  static count = 0
+  static count = 0 // (1) define static property
 
   static getCount() {
-    return Item.count
+    return Item.count // (2) access static property inside class
   }
 }
 
@@ -21,7 +21,7 @@ class Item {
 let pen = new Item('Pen', 5)
 let notebook = new Item('notebook', 10)
 
-console.log(Item.getCount())
+console.log(Item.getCount()) // (3) access static method
 
 /*
   Summary

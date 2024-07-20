@@ -7,12 +7,13 @@
 class Circle {
   #radius = 0
 
-  static #count = 0 // *** First, add a private static field #count to the Circle class and initialize its value to zero:
+  static #count = 0 // (1) First, add a private static field #count to the Circle class and initialize its value to zero:
 
   constructor(radius) {
     this.radius = radius
-    Circle.#count++ // *** Second, increase the #count by one in the constructor:
+    Circle.#count++ // (2) Second, increase the #count by one
   }
+
   get area() {
     return Math.PI * Math.pow(this.radius, 2)
   }
@@ -30,12 +31,12 @@ class Circle {
     return #radius in circle
   }
 
-  // *** Third, define a static method that returns the value of the #count private static field:
+  // (3) Third, define a static method that returns the value of the #count private static field:
   static getCount() {
     return Circle.#count
   }
 }
 
-// *** Finally, create three instances of the Circle class and output the count value to the console:
+// (4) Finally, create three instances of the Circle class and output the count value to the console:
 let circles = [new Circle(10), new Circle(20), new Circle(30)]
 console.log(Circle.getCount())

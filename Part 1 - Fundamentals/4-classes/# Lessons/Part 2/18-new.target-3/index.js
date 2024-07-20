@@ -8,7 +8,7 @@
 class Person {
   constructor(name) {
     this.name = name
-    console.log(new.target.name)
+    console.log(new.target.name) // # Person or Employee
   }
 }
 

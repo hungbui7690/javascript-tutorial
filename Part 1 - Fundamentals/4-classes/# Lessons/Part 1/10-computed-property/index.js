@@ -15,6 +15,7 @@ const rank = {
 }
 
 console.log(rank.c) // 3
+console.log(rank[propName])
 
 ////////////////////////////
 // Like an object literal, you can use computed properties for getters and setters of a class. For example:

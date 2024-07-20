@@ -6,13 +6,13 @@
 
 // For example, the following defines the Circle class with a private field radius:
 class Circle {
-  #radius // define
+  #radius // 1. define
 
   constructor(value) {
-    this.#radius = value // initialize
+    this.#radius = value // 2. initialize
   }
   get area() {
-    return Math.PI * Math.pow(this.#radius, 2) // calculate
+    return Math.PI * Math.pow(this.#radius, 2) // 3. calculate
   }
 }
 
@@ -20,4 +20,6 @@ class Circle {
 // Because the #radius is a private field, you can only access it inside the Circle class. In other words, the #radius field is invisible outside of the Circle class.
 let circle = new Circle(10)
 console.log(circle.area) // 314.1592653589793
-console.log(circle.radius) // undefined
+
+// 4. cannot access private property from outside of class
+console.log(circle.radius) // undefined =>

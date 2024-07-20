@@ -1,10 +1,10 @@
 /*
   Functions are First-Class Citizens
+  - Storing functions in variables
+    > Functions are first-class citizens in JavaScript. In other words, you can treat functions like values of  other types.
 
 */
 
-// Storing functions in variables
-// Functions are first-class citizens in JavaScript. In other words, you can treat functions like values of other types.
 // The following defines the add() function and assigns the function name to the variable sum:
 function add(a, b) {
   return a + b

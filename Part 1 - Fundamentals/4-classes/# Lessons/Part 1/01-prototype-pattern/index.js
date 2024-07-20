@@ -3,8 +3,7 @@
 
 */
 
-/////////////////////////////////
-// Before ES6, JavaScript had no concept of classes. To mimic a class, you often use the constructor/prototype pattern as shown in the following example:
+// Before ES6, JavaScript had no concept of classes. To mimic a class, you often use the factory/prototype pattern as shown in the following example:
 function Person(name) {
   this.name = name
 }
@@ -13,7 +12,7 @@ Person.prototype.getName = function () {
   return this.name
 }
 
-var john = new Person('John Doe')
+const john = new Person('John Doe')
 console.log(john.getName())
 
 /*
@@ -23,7 +22,6 @@ console.log(john.getName())
   - Then, create a new instance of the Person type using the new operator. The john object, hence, is an instance of the Person and Object through prototypal inheritance.
 */
 
-/////////////////////////////////
 // The following statements use the instanceof operator to check if john is an instance of the Person and Object type:
 console.log(john instanceof Person) // true
 console.log(john instanceof Object) // true
